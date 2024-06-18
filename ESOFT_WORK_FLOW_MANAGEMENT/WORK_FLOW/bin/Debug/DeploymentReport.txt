@@ -1,0 +1,34 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Create
+       [dbo].[EMPLOYEE] (Table)
+       [dbo].[ENTITY_EMPLOYEE] (Table)
+       [dbo].[ENTITY_WORK] (Table)
+       [dbo].[ORGANIZATION] (Table)
+       [dbo].[STATUS] (Table)
+       [dbo].[USER_LOGIN] (Table)
+       [dbo].[WORK_FLOW] (Table)
+       [dbo].[WORKFLOW_MANAGER] (Table)
+       [dbo].[FK_EMPLOYEE_ROLE] (Foreign Key)
+       [dbo].[FK_EMPLOYEE_ORGN] (Foreign Key)
+       [dbo].[FK_EMPLOYEE_STATUS] (Foreign Key)
+       [dbo].[FK_ENTITY_EMPLOYEE_ENTITY] (Foreign Key)
+       [dbo].[FK_ENTITY_EMPLOYEE_EMP] (Foreign Key)
+       [dbo].[FK_ENTITY_EMPLOYEE_STATUS] (Foreign Key)
+       [dbo].[FK_ENTITY_WORK_WF] (Foreign Key)
+       [dbo].[FK_ENTITY_WORK_STATUS] (Foreign Key)
+       [dbo].[FK_WORK_FLOW_STATUS] (Foreign Key)
+       [dbo].[FK_WORKFLOW_MANAGER_WF] (Foreign Key)
+       [dbo].[FK_WORKFLOW_MANAGER_MANAGER] (Foreign Key)
+       [dbo].[FK_WORKFLOW_MANAGER_STATUS] (Foreign Key)
+
+** Supporting actions

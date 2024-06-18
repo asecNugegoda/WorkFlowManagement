@@ -1,0 +1,59 @@
+﻿@model ESOFT_WORK_FLOW_MANAGEMENT.Models.ORGANIZATION
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout_New.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ORGANIZATION</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ORGANIZATION1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ORGANIZATION1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ADR1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ADR1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ADR2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ADR2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CITY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CITY)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CONTATC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CONTATC)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ORG_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

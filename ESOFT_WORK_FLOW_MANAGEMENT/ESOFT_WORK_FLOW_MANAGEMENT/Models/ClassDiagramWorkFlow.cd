@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ESOFT_WORK_FLOW_MANAGEMENT.Models.EmployeeEntityModel">
+    <Position X="5.25" Y="1.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>EAQAABAFAAAAAAAAAAAIAAABCAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\EmployeeEntityModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="status" />
+      <Field Name="emoloyee" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ESOFT_WORK_FLOW_MANAGEMENT.Models.EmployeeModel">
+    <Position X="4.75" Y="4" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAQAAFKEAABSAAAACAAAAAgAAAAAAAAAAYAACgEAABg=</HashCode>
+      <FileName>Models\EmployeeModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="status" />
+      <Field Name="organizeId" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ESOFT_WORK_FLOW_MANAGEMENT.Models.EntityModel">
+    <Position X="9" Y="4.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>kAQBAIAkAAAAAAAAECAAAAAgAAgAAAAJAAAAAAAAAQA=</HashCode>
+      <FileName>Models\EntityModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="status" />
+      <Field Name="workflowId" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ESOFT_WORK_FLOW_MANAGEMENT.Models.ManagerWorkFlow">
+    <Position X="7" Y="4" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAIAAEACAAAAAAAAAAAAAEAAAABAAAAABAAAAAQAA=</HashCode>
+      <FileName>Models\ManagerWorkFlow.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="status" />
+      <Field Name="manager" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ESOFT_WORK_FLOW_MANAGEMENT.Models.OrganizationModel">
+    <Position X="6.25" Y="7" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAIAAAADAAAAAwAAAAAAAAAEAAIABA=</HashCode>
+      <FileName>Models\OrganizationModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ESOFT_WORK_FLOW_MANAGEMENT.Models.StatusModel">
+    <Position X="7.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAMAAAACAAAAAAAAAAAAAABAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Models\StatusModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ESOFT_WORK_FLOW_MANAGEMENT.Models.WorkFlowModel">
+    <Position X="9.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAEAAAgAAAAoCABAIAgAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>Models\WorkFlowModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="status" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="df4c2eff2bb14c929aed5e28c88af7bf" Name="Diagram1">
+        <EntityTypeShape EntityType="WORK_FLOWModel.ENTITY_EMPLOYEE" Width="1.5" PointX="7.875" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WORK_FLOWModel.ENTITY_WORK" Width="1.5" PointX="5.25" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="WORK_FLOWModel.ORGANIZATION" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WORK_FLOWModel.STATUS" Width="1.5" PointX="0.75" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="WORK_FLOWModel.WORK_FLOW" Width="1.5" PointX="2.875" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="WORK_FLOWModel.WORKFLOW_MANAGER" Width="1.5" PointX="7.625" PointY="6.875" IsExpanded="true" />
+        <AssociationConnector Association="WORK_FLOWModel.FK_ENTITY_EMPLOYEE_ENTITY" ManuallyRouted="false" />
+        <AssociationConnector Association="WORK_FLOWModel.FK_ENTITY_EMPLOYEE_STATUS" ManuallyRouted="false" />
+        <AssociationConnector Association="WORK_FLOWModel.FK_ENTITY_WORK_STATUS" ManuallyRouted="false" />
+        <AssociationConnector Association="WORK_FLOWModel.FK_ENTITY_WORK_WF" ManuallyRouted="false" />
+        <AssociationConnector Association="WORK_FLOWModel.FK_WORK_FLOW_STATUS" ManuallyRouted="false" />
+        <AssociationConnector Association="WORK_FLOWModel.FK_WORKFLOW_MANAGER_STATUS" ManuallyRouted="false" />
+        <AssociationConnector Association="WORK_FLOWModel.FK_WORKFLOW_MANAGER_WF" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="WORK_FLOWModel.EMPLOYEE" Width="1.5" PointX="3" PointY="2.75" />
+        <EntityTypeShape EntityType="WORK_FLOWModel.USER_ROLE" Width="1.5" PointX="0.75" PointY="0.75" />
+        <AssociationConnector Association="WORK_FLOWModel.FK_EMPLOYEE_ORGN" />
+        <AssociationConnector Association="WORK_FLOWModel.FK_EMPLOYEE_ROLE" />
+        <AssociationConnector Association="WORK_FLOWModel.FK_EMPLOYEE_STATUS" />
+        <AssociationConnector Association="WORK_FLOWModel.FK_ENTITY_EMPLOYEE_EMP" />
+        <AssociationConnector Association="WORK_FLOWModel.FK_WORKFLOW_MANAGER_MANAGER" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

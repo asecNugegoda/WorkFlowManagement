@@ -1,0 +1,58 @@
+﻿@model IEnumerable<ESOFT_WORK_FLOW_MANAGEMENT.Models.ORGANIZATION>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout_New.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ORGANIZATION1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ADR1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ADR2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CITY)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CONTATC)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ORGANIZATION1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ADR1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ADR2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CITY)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CONTATC)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ORG_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ORG_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ORG_ID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,5 @@
+c:\users\thilinath\documents\visual studio 2015\Projects\ESOFT_WORK_FLOW_MANAGEMENT\WORK_FLOW\bin\Debug\WORK_FLOW.dacpac
+c:\users\thilinath\documents\visual studio 2015\Projects\ESOFT_WORK_FLOW_MANAGEMENT\WORK_FLOW\bin\Debug\WORK_FLOW.dll
+c:\users\thilinath\documents\visual studio 2015\Projects\ESOFT_WORK_FLOW_MANAGEMENT\WORK_FLOW\bin\Debug\WORK_FLOW.pdb
+c:\users\thilinath\documents\visual studio 2015\Projects\ESOFT_WORK_FLOW_MANAGEMENT\WORK_FLOW\obj\Debug\WORK_FLOW.dll
+c:\users\thilinath\documents\visual studio 2015\Projects\ESOFT_WORK_FLOW_MANAGEMENT\WORK_FLOW\obj\Debug\WORK_FLOW.pdb

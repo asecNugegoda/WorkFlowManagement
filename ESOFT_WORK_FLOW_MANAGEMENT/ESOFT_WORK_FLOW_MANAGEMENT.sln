@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ESOFT_WORK_FLOW_MANAGEMENT", "ESOFT_WORK_FLOW_MANAGEMENT\ESOFT_WORK_FLOW_MANAGEMENT.csproj", "{0EBC9BED-5BBB-42D8-945A-4315DC9720DE}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "WORK_FLOW", "WORK_FLOW\WORK_FLOW.sqlproj", "{3EB30FA8-BCF0-4DE3-BFD6-B9ED89C04814}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0EBC9BED-5BBB-42D8-945A-4315DC9720DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EBC9BED-5BBB-42D8-945A-4315DC9720DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EBC9BED-5BBB-42D8-945A-4315DC9720DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EBC9BED-5BBB-42D8-945A-4315DC9720DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EB30FA8-BCF0-4DE3-BFD6-B9ED89C04814}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EB30FA8-BCF0-4DE3-BFD6-B9ED89C04814}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EB30FA8-BCF0-4DE3-BFD6-B9ED89C04814}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{3EB30FA8-BCF0-4DE3-BFD6-B9ED89C04814}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EB30FA8-BCF0-4DE3-BFD6-B9ED89C04814}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EB30FA8-BCF0-4DE3-BFD6-B9ED89C04814}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

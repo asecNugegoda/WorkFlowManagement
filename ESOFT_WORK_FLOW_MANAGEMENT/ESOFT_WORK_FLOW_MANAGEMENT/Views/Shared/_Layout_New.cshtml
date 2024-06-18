@@ -1,0 +1,89 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+        WORK FLOW MANAGEMENT 
+    </title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <!-- CSS Files -->
+    @Styles.Render("~/Content/css")
+</head>
+<body>
+    <div class="wrapper ">
+        <div class="sidebar" data-color="purple" data-background-color="black">
+            <!--
+                Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+
+                Tip 2: you can also add an image using data-image tag
+            -->
+            <div class="logo">
+                <a href="#" class="simple-text logo-normal">
+                    WORK FLOW MANAGEMENT
+                </a>
+            </div>
+            <div class="sidebar-wrapper">
+                <ul class="nav">
+                    <li class="nav-item ">
+                        <a class="nav-link" href="./dashboard.html">
+                            <i class="material-icons">dashboard</i>
+                            <p>Dashboard</p>
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" id="user" href="@Url.Action("Index", "Employee")">
+                            <i class="material-icons">person</i>
+                            <p>User Profile</p>
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="@Url.Action("Index", "WORK_FLOW")">
+                            <i class="material-icons">content_paste</i>
+                            <p>Work Flow</p>
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="@Url.Action("Index", "WORKFLOW_MANAGER")">
+                            <i class="material-icons">notifications</i>
+                            <p>Manage Work Flow</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item ">
+                        <a class="nav-link" href="@Url.Action("Index", "ENTITY_WORK")">
+                            <i class="material-icons">bubble_chart</i>
+                            <p>Assign Work Entities</p>
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="@Url.Action("Index", "ENTITY_EMPLOYEE")">
+                            <i class="material-icons">library_books</i>
+                            <p>Work Entities</p>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+
+            <div class="main-panel">
+                    @RenderBody()
+            </div>
+
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @Scripts.Render("~/bundles/core")
+        @RenderSection("scripts", required: false)
+        
+</body>
+</html>

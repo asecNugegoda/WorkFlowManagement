@@ -1,0 +1,102 @@
+﻿@model ESOFT_WORK_FLOW_MANAGEMENT.Models.WORKFLOW_MANAGER
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout_New.cshtml";
+}
+
+<div class="content">
+    @using (Html.BeginForm())
+            {
+        @Html.AntiForgeryToken()
+
+        <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top " id="navigation-example">
+            <div class="container-fluid">
+                <div class="navbar-wrapper">
+                    <h2>Edit Work Flow</h2>
+                </div>
+            </div>
+        </nav>
+
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb indigo lighten-4">
+                <li class="breadcrumb-item">
+                    <a class="black-text" href="#">Home</a>
+                    <i class="fa fa-caret-right mx-2" aria-hidden="true"></i>
+                </li>
+                <li class="breadcrumb-item">
+                    <a class="black-text" href="@Url.Action("Index", "WORK_FLOW")">Work Flow List</a>
+                    <i class="fa fa-caret-right mx-2" aria-hidden="true"></i>
+                </li>
+                <li class="breadcrumb-item">
+                    <a class="black-text" href="#">Edit Work Flow</a>
+                </li>
+            </ol>
+        </nav>
+
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header card-header-primary">
+                    <h4 class="card-title">Work Flow Create</h4>
+                    <p class="card-category">Complete Work Flow Details</p>
+                </div>
+                <div class="card-body">
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.HiddenFor(model => model.WB_ID)
+
+
+
+                    <div class="row">
+
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <label class="bmd-label-floating">Work Flow Name</label>
+                                @Html.DropDownList("WORK_FLOW", null, htmlAttributes: new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.WORK_FLOW, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="bmd-label-floating">Status</label>
+                                @Html.DropDownList("MANAGER", null, htmlAttributes: new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.MANAGER, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <label class="bmd-label-floating">Remark</label>
+                                @Html.EditorFor(model => model.REMARK, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.REMARK, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="bmd-label-floating">Status</label>
+                                @Html.DropDownList("STATUS", null, htmlAttributes: new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.STATUS, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Save" class="btn btn-default" />
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    }
+</div>
+                <div>
+                    @Html.ActionLink("Back to List", "Index")
+                </div>

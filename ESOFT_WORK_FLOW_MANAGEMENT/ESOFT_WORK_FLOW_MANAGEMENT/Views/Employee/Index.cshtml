@@ -1,0 +1,135 @@
+﻿@model IEnumerable<ESOFT_WORK_FLOW_MANAGEMENT.Models.EMPLOYEE>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout_New.cshtml";
+}
+
+
+<div class="content">
+
+    <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top " id="navigation-example">
+        <div class="container-fluid">
+            <div class="navbar-wrapper">
+                <h2>User Management</h2>
+            </div>
+        </div>
+    </nav>
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb indigo lighten-4">
+            <li class="breadcrumb-item">
+                <a class="black-text" href="#">Home</a>
+                <i class="fa fa-caret-right mx-2"  aria-hidden="true"></i>
+            </li>
+            <li class="breadcrumb-item">
+                <a class="black-text" href="#">User List</a>
+            </li>
+        </ol>
+    </nav>
+            <p>
+                @Html.ActionLink("Create New", "Create")
+            </p>
+
+        <div class="col-md-12">
+
+            <div class="card">
+                <div class="card-header card-header-primary">
+                    <h4 class="card-title ">All User List</h4>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead class=" text-primary">
+                                <tr>
+                                    <th>
+                                        Fisrt Name
+                                    </th>
+                                    <th>
+                                        Last Name
+                                    </th>
+                                    <th>
+                                        Contact
+                                    </th>
+                                    <th>
+                                        User Name
+                                    </th>
+                                    <th>
+                                        Organization
+                                    </th>
+                                    <th>
+                                        User Type
+                                    </th>
+                                    <th>
+                                        Status
+                                    </th>
+                                    <th>Modification</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.FIRST_NAME)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.LAST_NAME)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.CONTACT)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.USER_NAME)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.ORGANIZATION.ORGANIZATION1)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.USER_ROLE1.USER_ROLE1)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.STATUS1.STATUS1)
+                                        </td>
+                                        <td>
+                                            @Html.ActionLink("Edit", "Edit", new { id = item.EMP_ID }) |
+                                            @Html.ActionLink("Details", "Details", new { id = item.EMP_ID }) |
+                                            @Html.ActionLink("Delete", "Delete", new { id = item.EMP_ID })
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Central Modal Medium Success -->
+        <div class="modal" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Modal Heading</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        Modal body..
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>

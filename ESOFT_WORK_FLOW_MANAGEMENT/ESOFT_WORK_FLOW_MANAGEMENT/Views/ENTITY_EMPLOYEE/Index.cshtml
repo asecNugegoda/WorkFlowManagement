@@ -1,0 +1,79 @@
+﻿@model IEnumerable<ESOFT_WORK_FLOW_MANAGEMENT.Models.ENTITY_EMPLOYEE>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout_New.cshtml";
+}
+
+
+<div class="content">
+
+    <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top " id="navigation-example">
+        <div class="container-fluid">
+            <div class="navbar-wrapper">
+                <h2>Index</h2>
+            </div>
+        </div>
+    </nav>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header card-header-primary">
+                <h4 class="card-title ">Work Entities</h4>
+
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+
+                        <thead class=" text-primary">
+                            <tr>
+                                <th>
+                                    Employee Name
+                                </th>
+                                <th>
+                                    Entity
+                                </th>
+                                <th>
+                                    Status
+                                </th>
+                                <th>
+                                    Remark
+                                </th>
+                                <th>
+                                    Modification
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.EMPLOYEE.FIRST_NAME, item.EMPLOYEE.LAST_NAME)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ENTITY_WORK.ENTITY_NAME)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.STATUS1.STATUS1)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.REMARK)
+                                    </td>
+                                    <td>
+                                        @Html.ActionLink("Edit", "Edit", new { id = item.EE_ID }) |
+                                        @Html.ActionLink("Details", "Details", new { id = item.EE_ID }) 
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+                        
+ </div>

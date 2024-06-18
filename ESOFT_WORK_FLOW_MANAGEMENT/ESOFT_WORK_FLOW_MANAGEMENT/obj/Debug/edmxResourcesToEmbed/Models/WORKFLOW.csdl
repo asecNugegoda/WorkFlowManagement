@@ -1,0 +1,311 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WORK_FLOWModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ENTITY_EMPLOYEE">
+    <Key>
+      <PropertyRef Name="EE_ID" />
+    </Key>
+    <Property Name="EE_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ENTITY_ID" Type="Int32" />
+    <Property Name="EMP_ID" Type="Int32" />
+    <Property Name="STATUS" Type="Int32" />
+    <Property Name="REMARK" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="ENTITY_WORK" Relationship="Self.FK_ENTITY_EMPLOYEE_ENTITY" FromRole="ENTITY_EMPLOYEE" ToRole="ENTITY_WORK" />
+    <NavigationProperty Name="STATUS1" Relationship="Self.FK_ENTITY_EMPLOYEE_STATUS" FromRole="ENTITY_EMPLOYEE" ToRole="STATUS" />
+    <NavigationProperty Name="EMPLOYEE" Relationship="WORK_FLOWModel.FK_ENTITY_EMPLOYEE_EMP" FromRole="ENTITY_EMPLOYEE" ToRole="EMPLOYEE" />
+  </EntityType>
+  <EntityType Name="ENTITY_WORK">
+    <Key>
+      <PropertyRef Name="EW_WORK" />
+    </Key>
+    <Property Name="EW_WORK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="WF_ID" Type="Int32" />
+    <Property Name="ENTITY_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="REMARK" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASSIGN_DATE" Type="DateTime" Precision="0" />
+    <Property Name="END_DATE" Type="DateTime" Precision="0" />
+    <Property Name="STATUS" Type="Int32" />
+    <NavigationProperty Name="ENTITY_EMPLOYEE" Relationship="Self.FK_ENTITY_EMPLOYEE_ENTITY" FromRole="ENTITY_WORK" ToRole="ENTITY_EMPLOYEE" />
+    <NavigationProperty Name="STATUS1" Relationship="Self.FK_ENTITY_WORK_STATUS" FromRole="ENTITY_WORK" ToRole="STATUS" />
+    <NavigationProperty Name="WORK_FLOW" Relationship="Self.FK_ENTITY_WORK_WF" FromRole="ENTITY_WORK" ToRole="WORK_FLOW" />
+  </EntityType>
+  <EntityType Name="ORGANIZATION">
+    <Key>
+      <PropertyRef Name="ORG_ID" />
+    </Key>
+    <Property Name="ORG_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ORGANIZATION1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ADR1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ADR2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CITY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CONTATC" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="EMPLOYEEs" Relationship="WORK_FLOWModel.FK_EMPLOYEE_ORGN" FromRole="ORGANIZATION" ToRole="EMPLOYEE" />
+  </EntityType>
+  <EntityType Name="STATUS">
+    <Key>
+      <PropertyRef Name="STATUS_ID" />
+    </Key>
+    <Property Name="STATUS_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TYPE" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="STATUS1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ENTITY_EMPLOYEE" Relationship="Self.FK_ENTITY_EMPLOYEE_STATUS" FromRole="STATUS" ToRole="ENTITY_EMPLOYEE" />
+    <NavigationProperty Name="ENTITY_WORK" Relationship="Self.FK_ENTITY_WORK_STATUS" FromRole="STATUS" ToRole="ENTITY_WORK" />
+    <NavigationProperty Name="WORK_FLOW" Relationship="Self.FK_WORK_FLOW_STATUS" FromRole="STATUS" ToRole="WORK_FLOW" />
+    <NavigationProperty Name="WORKFLOW_MANAGER" Relationship="Self.FK_WORKFLOW_MANAGER_STATUS" FromRole="STATUS" ToRole="WORKFLOW_MANAGER" />
+    <NavigationProperty Name="EMPLOYEEs" Relationship="WORK_FLOWModel.FK_EMPLOYEE_STATUS" FromRole="STATUS" ToRole="EMPLOYEE" />
+  </EntityType>
+  <EntityType Name="WORK_FLOW">
+    <Key>
+      <PropertyRef Name="WF_ID" />
+    </Key>
+    <Property Name="WF_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="WF_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="STATUS" Type="Int32" />
+    <Property Name="CREATE_DATE" Type="DateTime" Precision="0" />
+    <Property Name="END_DATE" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="ENTITY_WORK" Relationship="Self.FK_ENTITY_WORK_WF" FromRole="WORK_FLOW" ToRole="ENTITY_WORK" />
+    <NavigationProperty Name="STATUS1" Relationship="Self.FK_WORK_FLOW_STATUS" FromRole="WORK_FLOW" ToRole="STATUS" />
+    <NavigationProperty Name="WORKFLOW_MANAGER" Relationship="Self.FK_WORKFLOW_MANAGER_WF" FromRole="WORK_FLOW" ToRole="WORKFLOW_MANAGER" />
+  </EntityType>
+  <EntityType Name="WORKFLOW_MANAGER">
+    <Key>
+      <PropertyRef Name="WB_ID" />
+    </Key>
+    <Property Name="WB_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="WORK_FLOW" Type="Int32" />
+    <Property Name="MANAGER" Type="Int32" Nullable="false" />
+    <Property Name="STATUS" Type="Int32" />
+    <Property Name="REMARK" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="STATUS1" Relationship="Self.FK_WORKFLOW_MANAGER_STATUS" FromRole="WORKFLOW_MANAGER" ToRole="STATUS" />
+    <NavigationProperty Name="WORK_FLOW1" Relationship="Self.FK_WORKFLOW_MANAGER_WF" FromRole="WORKFLOW_MANAGER" ToRole="WORK_FLOW" />
+    <NavigationProperty Name="EMPLOYEE" Relationship="WORK_FLOWModel.FK_WORKFLOW_MANAGER_MANAGER" FromRole="WORKFLOW_MANAGER" ToRole="EMPLOYEE" />
+  </EntityType>
+  <Association Name="FK_ENTITY_EMPLOYEE_ENTITY">
+    <End Role="ENTITY_WORK" Type="Self.ENTITY_WORK" Multiplicity="0..1" />
+    <End Role="ENTITY_EMPLOYEE" Type="Self.ENTITY_EMPLOYEE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ENTITY_WORK">
+        <PropertyRef Name="EW_WORK" />
+      </Principal>
+      <Dependent Role="ENTITY_EMPLOYEE">
+        <PropertyRef Name="ENTITY_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ENTITY_EMPLOYEE_STATUS">
+    <End Role="STATUS" Type="Self.STATUS" Multiplicity="0..1" />
+    <End Role="ENTITY_EMPLOYEE" Type="Self.ENTITY_EMPLOYEE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STATUS">
+        <PropertyRef Name="STATUS_ID" />
+      </Principal>
+      <Dependent Role="ENTITY_EMPLOYEE">
+        <PropertyRef Name="STATUS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ENTITY_WORK_STATUS">
+    <End Role="STATUS" Type="Self.STATUS" Multiplicity="0..1" />
+    <End Role="ENTITY_WORK" Type="Self.ENTITY_WORK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STATUS">
+        <PropertyRef Name="STATUS_ID" />
+      </Principal>
+      <Dependent Role="ENTITY_WORK">
+        <PropertyRef Name="STATUS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ENTITY_WORK_WF">
+    <End Role="WORK_FLOW" Type="Self.WORK_FLOW" Multiplicity="0..1" />
+    <End Role="ENTITY_WORK" Type="Self.ENTITY_WORK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WORK_FLOW">
+        <PropertyRef Name="WF_ID" />
+      </Principal>
+      <Dependent Role="ENTITY_WORK">
+        <PropertyRef Name="WF_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WORK_FLOW_STATUS">
+    <End Role="STATUS" Type="Self.STATUS" Multiplicity="0..1" />
+    <End Role="WORK_FLOW" Type="Self.WORK_FLOW" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STATUS">
+        <PropertyRef Name="STATUS_ID" />
+      </Principal>
+      <Dependent Role="WORK_FLOW">
+        <PropertyRef Name="STATUS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WORKFLOW_MANAGER_STATUS">
+    <End Role="STATUS" Type="Self.STATUS" Multiplicity="0..1" />
+    <End Role="WORKFLOW_MANAGER" Type="Self.WORKFLOW_MANAGER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STATUS">
+        <PropertyRef Name="STATUS_ID" />
+      </Principal>
+      <Dependent Role="WORKFLOW_MANAGER">
+        <PropertyRef Name="STATUS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WORKFLOW_MANAGER_WF">
+    <End Role="WORK_FLOW" Type="Self.WORK_FLOW" Multiplicity="0..1" />
+    <End Role="WORKFLOW_MANAGER" Type="Self.WORKFLOW_MANAGER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WORK_FLOW">
+        <PropertyRef Name="WF_ID" />
+      </Principal>
+      <Dependent Role="WORKFLOW_MANAGER">
+        <PropertyRef Name="WORK_FLOW" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="WORK_FLOWEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ENTITY_EMPLOYEE" EntityType="Self.ENTITY_EMPLOYEE" />
+    <EntitySet Name="ENTITY_WORK" EntityType="Self.ENTITY_WORK" />
+    <EntitySet Name="ORGANIZATIONs" EntityType="Self.ORGANIZATION" />
+    <EntitySet Name="STATUS" EntityType="Self.STATUS" />
+    <EntitySet Name="WORK_FLOW" EntityType="Self.WORK_FLOW" />
+    <EntitySet Name="WORKFLOW_MANAGER" EntityType="Self.WORKFLOW_MANAGER" />
+    <AssociationSet Name="FK_ENTITY_EMPLOYEE_ENTITY" Association="Self.FK_ENTITY_EMPLOYEE_ENTITY">
+      <End Role="ENTITY_WORK" EntitySet="ENTITY_WORK" />
+      <End Role="ENTITY_EMPLOYEE" EntitySet="ENTITY_EMPLOYEE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ENTITY_EMPLOYEE_STATUS" Association="Self.FK_ENTITY_EMPLOYEE_STATUS">
+      <End Role="STATUS" EntitySet="STATUS" />
+      <End Role="ENTITY_EMPLOYEE" EntitySet="ENTITY_EMPLOYEE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ENTITY_WORK_STATUS" Association="Self.FK_ENTITY_WORK_STATUS">
+      <End Role="STATUS" EntitySet="STATUS" />
+      <End Role="ENTITY_WORK" EntitySet="ENTITY_WORK" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ENTITY_WORK_WF" Association="Self.FK_ENTITY_WORK_WF">
+      <End Role="WORK_FLOW" EntitySet="WORK_FLOW" />
+      <End Role="ENTITY_WORK" EntitySet="ENTITY_WORK" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WORK_FLOW_STATUS" Association="Self.FK_WORK_FLOW_STATUS">
+      <End Role="STATUS" EntitySet="STATUS" />
+      <End Role="WORK_FLOW" EntitySet="WORK_FLOW" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WORKFLOW_MANAGER_STATUS" Association="Self.FK_WORKFLOW_MANAGER_STATUS">
+      <End Role="STATUS" EntitySet="STATUS" />
+      <End Role="WORKFLOW_MANAGER" EntitySet="WORKFLOW_MANAGER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WORKFLOW_MANAGER_WF" Association="Self.FK_WORKFLOW_MANAGER_WF">
+      <End Role="WORK_FLOW" EntitySet="WORK_FLOW" />
+      <End Role="WORKFLOW_MANAGER" EntitySet="WORKFLOW_MANAGER" />
+    </AssociationSet>
+    <EntitySet Name="EMPLOYEEs" EntityType="WORK_FLOWModel.EMPLOYEE" />
+    <EntitySet Name="USER_ROLE" EntityType="WORK_FLOWModel.USER_ROLE" />
+    <AssociationSet Name="FK_EMPLOYEE_ORGN" Association="WORK_FLOWModel.FK_EMPLOYEE_ORGN">
+      <End Role="ORGANIZATION" EntitySet="ORGANIZATIONs" />
+      <End Role="EMPLOYEE" EntitySet="EMPLOYEEs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EMPLOYEE_ROLE" Association="WORK_FLOWModel.FK_EMPLOYEE_ROLE">
+      <End Role="USER_ROLE" EntitySet="USER_ROLE" />
+      <End Role="EMPLOYEE" EntitySet="EMPLOYEEs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EMPLOYEE_STATUS" Association="WORK_FLOWModel.FK_EMPLOYEE_STATUS">
+      <End Role="STATUS" EntitySet="STATUS" />
+      <End Role="EMPLOYEE" EntitySet="EMPLOYEEs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ENTITY_EMPLOYEE_EMP" Association="WORK_FLOWModel.FK_ENTITY_EMPLOYEE_EMP">
+      <End Role="EMPLOYEE" EntitySet="EMPLOYEEs" />
+      <End Role="ENTITY_EMPLOYEE" EntitySet="ENTITY_EMPLOYEE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WORKFLOW_MANAGER_MANAGER" Association="WORK_FLOWModel.FK_WORKFLOW_MANAGER_MANAGER">
+      <End Role="EMPLOYEE" EntitySet="EMPLOYEEs" />
+      <End Role="WORKFLOW_MANAGER" EntitySet="WORKFLOW_MANAGER" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="EMPLOYEE">
+    <Key>
+      <PropertyRef Name="EMP_ID" />
+    </Key>
+    <Property Name="EMP_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USER_ROLE" Type="Int32" />
+    <Property Name="ORGN_ID" Type="Int32" />
+    <Property Name="FIRST_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LAST_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CONTACT" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="USER_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="STATUS" Type="Int32" />
+    <NavigationProperty Name="ORGANIZATION" Relationship="WORK_FLOWModel.FK_EMPLOYEE_ORGN" FromRole="EMPLOYEE" ToRole="ORGANIZATION" />
+    <NavigationProperty Name="USER_ROLE1" Relationship="WORK_FLOWModel.FK_EMPLOYEE_ROLE" FromRole="EMPLOYEE" ToRole="USER_ROLE" />
+    <NavigationProperty Name="STATUS1" Relationship="WORK_FLOWModel.FK_EMPLOYEE_STATUS" FromRole="EMPLOYEE" ToRole="STATUS" />
+    <NavigationProperty Name="ENTITY_EMPLOYEE" Relationship="WORK_FLOWModel.FK_ENTITY_EMPLOYEE_EMP" FromRole="EMPLOYEE" ToRole="ENTITY_EMPLOYEE" />
+    <NavigationProperty Name="WORKFLOW_MANAGER" Relationship="WORK_FLOWModel.FK_WORKFLOW_MANAGER_MANAGER" FromRole="EMPLOYEE" ToRole="WORKFLOW_MANAGER" />
+  </EntityType>
+  <EntityType Name="USER_ROLE">
+    <Key>
+      <PropertyRef Name="USER_ROLE_ID" />
+    </Key>
+    <Property Name="USER_ROLE_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USER_ROLE1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="EMPLOYEEs" Relationship="WORK_FLOWModel.FK_EMPLOYEE_ROLE" FromRole="USER_ROLE" ToRole="EMPLOYEE" />
+  </EntityType>
+  <Association Name="FK_EMPLOYEE_ORGN">
+    <End Type="WORK_FLOWModel.ORGANIZATION" Role="ORGANIZATION" Multiplicity="0..1" />
+    <End Type="WORK_FLOWModel.EMPLOYEE" Role="EMPLOYEE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ORGANIZATION">
+        <PropertyRef Name="ORG_ID" />
+      </Principal>
+      <Dependent Role="EMPLOYEE">
+        <PropertyRef Name="ORGN_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EMPLOYEE_ROLE">
+    <End Type="WORK_FLOWModel.USER_ROLE" Role="USER_ROLE" Multiplicity="0..1" />
+    <End Type="WORK_FLOWModel.EMPLOYEE" Role="EMPLOYEE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USER_ROLE">
+        <PropertyRef Name="USER_ROLE_ID" />
+      </Principal>
+      <Dependent Role="EMPLOYEE">
+        <PropertyRef Name="USER_ROLE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EMPLOYEE_STATUS">
+    <End Type="WORK_FLOWModel.STATUS" Role="STATUS" Multiplicity="0..1" />
+    <End Type="WORK_FLOWModel.EMPLOYEE" Role="EMPLOYEE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STATUS">
+        <PropertyRef Name="STATUS_ID" />
+      </Principal>
+      <Dependent Role="EMPLOYEE">
+        <PropertyRef Name="STATUS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ENTITY_EMPLOYEE_EMP">
+    <End Type="WORK_FLOWModel.EMPLOYEE" Role="EMPLOYEE" Multiplicity="0..1" />
+    <End Type="WORK_FLOWModel.ENTITY_EMPLOYEE" Role="ENTITY_EMPLOYEE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMPLOYEE">
+        <PropertyRef Name="EMP_ID" />
+      </Principal>
+      <Dependent Role="ENTITY_EMPLOYEE">
+        <PropertyRef Name="EMP_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WORKFLOW_MANAGER_MANAGER">
+    <End Type="WORK_FLOWModel.EMPLOYEE" Role="EMPLOYEE" Multiplicity="1" />
+    <End Type="WORK_FLOWModel.WORKFLOW_MANAGER" Role="WORKFLOW_MANAGER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMPLOYEE">
+        <PropertyRef Name="EMP_ID" />
+      </Principal>
+      <Dependent Role="WORKFLOW_MANAGER">
+        <PropertyRef Name="MANAGER" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

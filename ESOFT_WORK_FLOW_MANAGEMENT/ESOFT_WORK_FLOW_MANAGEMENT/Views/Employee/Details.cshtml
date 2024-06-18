@@ -1,0 +1,75 @@
+﻿@model ESOFT_WORK_FLOW_MANAGEMENT.Models.EMPLOYEE
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout_New.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>EMPLOYEE</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FIRST_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FIRST_NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LAST_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LAST_NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CONTACT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CONTACT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.USER_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USER_NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ORGANIZATION.ORGANIZATION1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ORGANIZATION.ORGANIZATION1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.USER_ROLE1.USER_ROLE1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USER_ROLE1.USER_ROLE1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STATUS1.STATUS1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STATUS1.STATUS1)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.EMP_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

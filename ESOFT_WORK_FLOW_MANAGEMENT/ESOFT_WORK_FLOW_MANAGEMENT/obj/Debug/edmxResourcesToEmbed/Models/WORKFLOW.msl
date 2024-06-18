@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="WORK_FLOWModelStoreContainer" CdmEntityContainer="WORK_FLOWEntities">
+    <EntitySetMapping Name="ENTITY_EMPLOYEE">
+      <EntityTypeMapping TypeName="WORK_FLOWModel.ENTITY_EMPLOYEE">
+        <MappingFragment StoreEntitySet="ENTITY_EMPLOYEE">
+          <ScalarProperty Name="EE_ID" ColumnName="EE_ID" />
+          <ScalarProperty Name="ENTITY_ID" ColumnName="ENTITY_ID" />
+          <ScalarProperty Name="EMP_ID" ColumnName="EMP_ID" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ENTITY_WORK">
+      <EntityTypeMapping TypeName="WORK_FLOWModel.ENTITY_WORK">
+        <MappingFragment StoreEntitySet="ENTITY_WORK">
+          <ScalarProperty Name="EW_WORK" ColumnName="EW_WORK" />
+          <ScalarProperty Name="WF_ID" ColumnName="WF_ID" />
+          <ScalarProperty Name="ENTITY_NAME" ColumnName="ENTITY_NAME" />
+          <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+          <ScalarProperty Name="ASSIGN_DATE" ColumnName="ASSIGN_DATE" />
+          <ScalarProperty Name="END_DATE" ColumnName="END_DATE" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ORGANIZATIONs">
+      <EntityTypeMapping TypeName="WORK_FLOWModel.ORGANIZATION">
+        <MappingFragment StoreEntitySet="ORGANIZATION">
+          <ScalarProperty Name="ORG_ID" ColumnName="ORG_ID" />
+          <ScalarProperty Name="ORGANIZATION1" ColumnName="ORGANIZATION" />
+          <ScalarProperty Name="ADR1" ColumnName="ADR1" />
+          <ScalarProperty Name="ADR2" ColumnName="ADR2" />
+          <ScalarProperty Name="CITY" ColumnName="CITY" />
+          <ScalarProperty Name="CONTATC" ColumnName="CONTATC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="STATUS">
+      <EntityTypeMapping TypeName="WORK_FLOWModel.STATUS">
+        <MappingFragment StoreEntitySet="STATUS">
+          <ScalarProperty Name="STATUS_ID" ColumnName="STATUS_ID" />
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+          <ScalarProperty Name="STATUS1" ColumnName="STATUS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WORK_FLOW">
+      <EntityTypeMapping TypeName="WORK_FLOWModel.WORK_FLOW">
+        <MappingFragment StoreEntitySet="WORK_FLOW">
+          <ScalarProperty Name="WF_ID" ColumnName="WF_ID" />
+          <ScalarProperty Name="WF_NAME" ColumnName="WF_NAME" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
+          <ScalarProperty Name="END_DATE" ColumnName="END_DATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WORKFLOW_MANAGER">
+      <EntityTypeMapping TypeName="WORK_FLOWModel.WORKFLOW_MANAGER">
+        <MappingFragment StoreEntitySet="WORKFLOW_MANAGER">
+          <ScalarProperty Name="WB_ID" ColumnName="WB_ID" />
+          <ScalarProperty Name="WORK_FLOW" ColumnName="WORK_FLOW" />
+          <ScalarProperty Name="MANAGER" ColumnName="MANAGER" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EMPLOYEEs">
+      <EntityTypeMapping TypeName="WORK_FLOWModel.EMPLOYEE">
+        <MappingFragment StoreEntitySet="EMPLOYEE">
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+          <ScalarProperty Name="USER_NAME" ColumnName="USER_NAME" />
+          <ScalarProperty Name="CONTACT" ColumnName="CONTACT" />
+          <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
+          <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+          <ScalarProperty Name="ORGN_ID" ColumnName="ORGN_ID" />
+          <ScalarProperty Name="USER_ROLE" ColumnName="USER_ROLE" />
+          <ScalarProperty Name="EMP_ID" ColumnName="EMP_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USER_ROLE">
+      <EntityTypeMapping TypeName="WORK_FLOWModel.USER_ROLE">
+        <MappingFragment StoreEntitySet="USER_ROLE">
+          <ScalarProperty Name="USER_ROLE1" ColumnName="USER_ROLE" />
+          <ScalarProperty Name="USER_ROLE_ID" ColumnName="USER_ROLE_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

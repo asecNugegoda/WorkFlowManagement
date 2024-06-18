@@ -1,0 +1,94 @@
+﻿@model IEnumerable<ESOFT_WORK_FLOW_MANAGEMENT.Models.WORKFLOW_MANAGER>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout_New.cshtml";
+}
+
+<div class="content">
+
+    <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top " id="navigation-example">
+        <div class="container-fluid">
+            <div class="navbar-wrapper">
+                <h2>Manage Work Flow</h2>
+            </div>
+        </div>
+    </nav>
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb indigo lighten-4">
+            <li class="breadcrumb-item">
+                <a class="black-text" href="#">Home</a>
+                <i class="fa fa-caret-right mx-2" aria-hidden="true"></i>
+            </li>
+            <li class="breadcrumb-item">
+                <a class="black-text" href="">Assign Manager List</a>
+            </li>
+
+        </ol>
+    </nav>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+
+
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header card-header-primary">
+                <h4 class="card-title ">Manage Work Flow</h4>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead class=" text-primary">
+                            <tr>
+                                <th>
+                                    Work Flow Name
+                                </th>
+                                <th>
+                                    Manager Name
+                                </th>
+                                <th>
+                                    Status
+                                </th>
+                                <th>
+                                    Remark
+                                </th>
+                                <th>
+                                    Modification
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.WORK_FLOW1.WF_NAME)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.EMPLOYEE.FIRST_NAME)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.STATUS1.STATUS1)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.REMARK)
+                                    </td>
+                                    <td>
+                                        @Html.ActionLink("Edit", "Edit", new { id = item.WB_ID }) |
+                                        @Html.ActionLink("Details", "Details", new { id = item.WB_ID }) |
+                                        @Html.ActionLink("Delete", "Delete", new { id = item.WB_ID })
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+
+                    </table>
+                </div>
+                </div>
+            </div>
+        </div>
